@@ -1,0 +1,86 @@
+.heroImage {
+  background-image: url("../../../public/hero.jpg");
+  background-position: center;
+  background-size: cover;
+  /* height: 80vh; */
+  height: 50rem;
+
+  margin-bottom: 9.4rem;
+}
+
+.heroImage main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.heroTextBox {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.smallText {
+  font-size: 1.8rem;
+  margin-bottom: 2.4rem;
+}
+
+.bigText {
+  font-size: 5.2rem;
+  margin-bottom: 3.2rem;
+  font-weight: 700;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  font-weight: 600;
+}
+
+.buttonPrimary {
+  padding: 1.6rem 3.2rem;
+  font-size: 1.6rem;
+  border: none;
+  background-color: #fff;
+  border-radius: 500px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.buttonPrimary:hover {
+  background-color: #b1b9c5;
+}
+
+.buttonSecondary {
+  padding: 1.6rem 3.2rem;
+  font-size: 1.6rem;
+  border: none;
+  background-color: transparent;
+  border-radius: 500px;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-weight: 600;
+}
+.buttonSecondary:hover {
+  background-color: #fff;
+  color: #212529;
+}
+
+@media (max-width: 39em) {
+  .heroImage main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .heroTextBox {
+    padding-right: 3.2rem;
+  }
+}
+@media (max-width: 25em) {
+  .heroTextBox {
+    padding-right: 0;
+  }
+}

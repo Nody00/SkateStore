@@ -1,0 +1,224 @@
+.footer2 {
+  background-color: #191c1f;
+  padding-top: 6.4rem;
+  padding-bottom: 6.4rem;
+}
+
+.logoSection {
+  padding: 2.4rem;
+}
+
+.footerInfo {
+  padding: 1.2rem;
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 6.4rem;
+}
+
+.logoSection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  /* gap: 3.2rem; */
+  color: #fff;
+}
+
+/*  */
+
+.logoTextBig {
+  font-size: 3.2rem;
+  margin-bottom: 2.4rem;
+}
+
+.logoTextSmall {
+  font-size: 1.4rem;
+  margin-bottom: 2.4rem;
+  color: #b1b9c5;
+  line-height: 1.6;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.4rem;
+  padding: 1rem;
+  background-color: #3e4246;
+  border-radius: 500px;
+  transition: all 0.3s;
+}
+.inputContainer:hover {
+  background-color: #515559;
+}
+
+.logoInput {
+  border: none;
+  background-color: #3e4246;
+  padding: 1.4rem 2.4rem;
+  outline: none;
+  color: #b1b9c5;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.inputContainer:hover .logoInput {
+  background-color: #515559;
+}
+.logoInput:focus {
+  border: none;
+}
+.logoInput::placeholder {
+  font-size: 1.6rem;
+  font-family: inherit;
+  color: #b1b9c5;
+}
+
+.formAction button {
+  width: 4.8rem;
+  height: 4.8rem;
+  padding: 1.2rem;
+  border-radius: 500px;
+  border: none;
+  background-color: #191c1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.formIcon {
+  color: #b1b9c5;
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.checkBoxContainer {
+  margin-bottom: 6rem;
+}
+
+.checkBoxFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.checkBox {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.checkBoxText {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #b1b9c5;
+}
+.checkBoxText span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.checkBoxText span:hover {
+  text-decoration: none;
+}
+.socialMediaContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.socialIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #b1b9c5;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.socialIcon:hover {
+  color: #fff;
+}
+
+/*  */
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.logoContainer p {
+  font-size: 1.8rem;
+  color: #bbb;
+}
+
+.icon {
+  height: 3.2rem;
+  width: 3.2rem;
+  color: #2f9e44;
+}
+
+.copyright {
+  font-size: 1.2rem;
+  color: #bbbbbbd2;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+  color: #fff;
+}
+
+.linkContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4.8rem;
+}
+
+.footerLink {
+  font-size: 1.6rem;
+  transition: all 0.2s ease-out;
+  color: #b1b9c5;
+}
+
+.footerLink:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 54em) {
+  .footerGrid {
+    gap: 0.5rem;
+  }
+}
+@media (max-width: 50em) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 4.8rem;
+    text-align: center;
+  }
+  .logoSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+  .linkContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+  }
+}

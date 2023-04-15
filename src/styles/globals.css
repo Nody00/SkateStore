@@ -1,77 +1,67 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+  --font-mono: "Inter";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+/*
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
+--- 01 TYPOGRAPHY SYSTEM
 
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
+- Font weights (The font is Inter)
+
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+
+- Letter spacing
+-0.5px
+-0.75px
+
+--- 02 COLORS
+
+- Primary: #212529
+-Secondary:#e9ecef
+
+
+
+
+
+- Accents:
+- Greys
+
+#888
+#767676 
+#6f6f6f 
+#555
+#333
+
+--- 05 SHADOWS
+
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+--- 06 BORDER-RADIUS
+
+Default:12px
+Medium: 8px
+Small:4px
+
+--- 07 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
 
 * {
   box-sizing: border-box;
@@ -79,29 +69,86 @@
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
+html {
+  font-size: 62.5%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  max-width: 100%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #212529;
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
+  z-index: 10;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.container {
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  max-width: 120rem;
+  transition: all 0.5s ease-out;
 }
 
-@media (prefers-color-scheme: dark) {
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  color: #333;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 7.4rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #267e36;
+  text-transform: uppercase;
+  margin-bottom: 6.4rem;
+  letter-spacing: 0.75px;
+}
+
+.margin-btm-small {
+  margin-bottom: 2rem;
+}
+.margin-btm-medium {
+  margin-bottom: 3.2rem;
+}
+
+@media (max-width: 68em) {
   html {
-    color-scheme: dark;
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 39em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 25em) {
+  html {
+    font-size: 43.75%;
   }
 }

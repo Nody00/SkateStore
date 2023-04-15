@@ -1,0 +1,95 @@
+.mobileNavContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+}
+
+.navList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 4.8rem;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  transition: all 0.2s ease-out;
+  color: #212529;
+}
+.listItem:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.listItem:hover .icon {
+  color: #828588;
+}
+
+.icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  transition: all 0.2s ease-out;
+  color: #212529;
+}
+
+.listText {
+  font-size: 2.4rem;
+}
+
+.cartNumber {
+  font-size: 2.4rem;
+  padding: 1.2rem;
+  background-color: #ced4da;
+  border-radius: 500px;
+  color: #212529;
+}
+
+.enterActive {
+  animation: showMobileNav 0.3s ease-out forwards;
+}
+.exitActive {
+  animation: hideMobileNav 0.3s ease-out forwards;
+}
+
+@keyframes showMobileNav {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes hideMobileNav {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(80%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
