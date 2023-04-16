@@ -1,0 +1,25 @@
+.blackBg {
+  background-color: #3e4246 !important;
+}
+
+.menu {
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4.8rem;
+}
+
+.menuItem {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #b1b9c5;
+  cursor: pointer;
+}
+.menuItem:hover {
+  color: #191c1f;
+}
+
+.activeItem {
+  color: #191c1f;
+}

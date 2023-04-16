@@ -12,6 +12,10 @@
   z-index: 15;
 }
 
+.nextLink {
+  text-decoration: none;
+}
+
 .navList {
   display: flex;
   flex-direction: column;
@@ -26,16 +30,19 @@
   align-items: center;
   justify-content: center;
   gap: 1.2rem;
-  transition: all 0.2s ease-out;
+  transition: all 0.2s;
   color: #212529;
+  padding: 1.2rem 2.4rem;
+  border-radius: 1000px;
+  cursor: pointer;
 }
 .listItem:hover {
-  cursor: pointer;
-  transform: scale(1.05);
+  background-color: #212529;
+  color: #fff;
 }
 
 .listItem:hover .icon {
-  color: #828588;
+  color: #fff;
 }
 
 .icon {

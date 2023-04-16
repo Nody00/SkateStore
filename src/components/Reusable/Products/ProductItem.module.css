@@ -8,6 +8,7 @@
 .image {
   width: 100%;
   margin-bottom: 1.2rem;
+  transition: all 0.2s;
 }
 
 .cartItemTextBox {
@@ -32,13 +33,18 @@
   font-size: 1.8rem;
 }
 
-.name,
-.price {
-  font-size: 1.8rem;
+.name {
+  font-size: 1.6rem;
 }
 
 .price {
   color: #c92a2a;
+  font-size: 1.8rem;
+}
+
+.type {
+  text-transform: uppercase;
+  font-size: 1.6rem;
 }
 
 .buttonContainer {
@@ -59,22 +65,9 @@
   cursor: pointer;
 }
 
-.buyBtn {
-  background-color: #1c7ed6;
+.btnAdd {
+  background-color: #2b8a3e;
 }
-.buyBtn:hover {
-  background-color: #4998de;
-}
-
-.removeBtn {
-  background-color: #c92a2a;
-}
-.removeBtn:hover {
-  background-color: #d45555;
-}
-
-@media (max-width: 39em) {
-  .cartItemContainer {
-    width: 80%;
-  }
+.btnAdd:hover {
+  background-color: #55a165;
 }

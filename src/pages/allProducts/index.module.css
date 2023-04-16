@@ -1,0 +1,39 @@
+.blackBg {
+  background-color: #3e4246 !important;
+}
+
+.productsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2.4rem;
+  margin-bottom: 9rem;
+}
+
+.menu {
+  margin-bottom: 2.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.menu label {
+  font-size: 1.8rem;
+}
+
+.menu select {
+  padding: 1.2rem;
+  font-size: 1.6rem;
+  outline: none;
+}
+
+@media (max-width: 50em) {
+  .productsContainer {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 39em) {
+  .productsContainer {
+    grid-template-columns: 1fr;
+  }
+}
