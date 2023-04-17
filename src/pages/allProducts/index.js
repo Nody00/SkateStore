@@ -5,7 +5,6 @@ import styles from "./index.module.css";
 import { connectToDB } from "@/lib/db";
 import ProductItem from "@/components/Reusable/Products/ProductItem";
 const AllProducts = (props) => {
-  console.log(props);
   return (
     <Fragment>
       <div className={styles.blackBg}>
@@ -15,13 +14,13 @@ const AllProducts = (props) => {
         <div className={styles.menu}>
           <label htmlFor="sortPrice">Sort by price:</label>
           <select id="sortPrice">
-            <option value="" key="">
+            <option value="" key="1">
               Select one
             </option>
-            <option value="" key="">
+            <option value="" key="2">
               Highest
             </option>
-            <option value="" key="">
+            <option value="" key="3">
               Lowest
             </option>
           </select>
@@ -30,6 +29,7 @@ const AllProducts = (props) => {
           {props.products.map((product) => (
             <ProductItem
               key={product.id}
+              id={product.id}
               name={product.productName}
               price={product.price}
               front={product.front}

@@ -1,0 +1,27 @@
+.authFormContainer {
+  padding: 1.2rem;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.4rem;
+}
+
+.menuItem {
+  font-size: 1.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #b1b9c5;
+}
+
+.menuItem:hover {
+  color: #000;
+}
+
+.itemActive {
+  text-decoration: underline;
+  color: #000;
+}

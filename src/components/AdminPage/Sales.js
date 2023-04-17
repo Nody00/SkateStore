@@ -2,7 +2,7 @@ import { CSSTransition } from "react-transition-group";
 import styles from "./Sales.module.css";
 import SalesItem from "./SalesItem";
 const Sales = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <CSSTransition
       in={props.shown}

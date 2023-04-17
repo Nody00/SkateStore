@@ -1,7 +1,12 @@
 import { CSSTransition } from "react-transition-group";
 import styles from "./CartList.module.css";
 import CartItem from "./CartItem";
+
+import { useSelector } from "react-redux";
+
 const CartList = (props) => {
+  const cartState = useSelector((state) => state.cart.cart);
+
   return (
     <CSSTransition
       in={props.shown}
@@ -16,9 +21,16 @@ const CartList = (props) => {
       }}
     >
       <div className={styles.cartListContainer}>
-        <CartItem />
-        <CartItem />
-        <CartItem />
+        {cartState.map((item) => (
+          <CartItem
+            key={item.id}
+            id={item.id}
+            front={item.front}
+            back={item.back}
+            name={item.name}
+            price={item.price}
+          />
+        ))}
       </div>
     </CSSTransition>
   );

@@ -1,0 +1,117 @@
+.enterActive {
+  animation: showSignIn 0.3s ease-out forwards;
+}
+.exitActive {
+  animation: hideSingIn 0.3s ease-out forwards;
+}
+
+@keyframes showSignIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes hideSingIn {
+  0% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateX(80%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+.singInContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signInGoogle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  background-color: #b1b9c5;
+  border-radius: 4px;
+  margin-bottom: 2.4rem;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.signInGoogle:hover {
+  background-color: #fff;
+  border: 1px solid #b1b9c5;
+}
+
+.text {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.icon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.textCredentials {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.or {
+  text-align: center;
+  margin-bottom: 2.4rem;
+  font-size: 1.6rem;
+}
+
+.form input {
+  padding: 1.2rem;
+  border: 1px solid #b1b9c5;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  font-family: inherit;
+  outline: none;
+}
+
+.form button {
+  padding: 1.2rem 2.4rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  border-radius: 4px;
+  border: none;
+  background-color: #b1b9c5;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.form button:hover {
+  background-color: #fff;
+  border: 1px solid #b1b9c5;
+}

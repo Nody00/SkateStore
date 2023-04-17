@@ -1,7 +1,23 @@
 import styles from "./ProductItem.module.css";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/features/cart/cartSlice";
 const ProductItem = (props) => {
   const [front, setFront] = useState(true);
+  const dispatch = useDispatch();
+
+  function addToCartHandler() {
+    const item = {
+      front: props.front,
+      back: props.back,
+      name: props.name,
+      id: props.id,
+      price: props.price,
+      type: props.type,
+    };
+
+    dispatch(addToCart(item));
+  }
 
   return (
     <div className={styles.cartItemContainer}>
@@ -29,7 +45,9 @@ const ProductItem = (props) => {
       </div>
 
       <div className={styles.buttonContainer}>
-        <button className={styles.btnAdd}>Add to cart</button>
+        <button className={styles.btnAdd} onClick={addToCartHandler}>
+          Add to cart
+        </button>
       </div>
     </div>
   );

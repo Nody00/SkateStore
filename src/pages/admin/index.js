@@ -6,10 +6,19 @@ import { connectToDB } from "@/lib/db";
 import Sales from "@/components/AdminPage/Sales";
 import AddNew from "@/components/AdminPage/AddNew";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
+import { useSession } from "next-auth/react";
 const Admin = (props) => {
   const [salesShown, setSalesShown] = useState(true);
   const [addNewShown, setAddNewShown] = useState(false);
+  const { data: session, status } = useSession();
+  const router = useRouter();
+
+  if (status === "unauthenticated") {
+    router.push("/");
+    return;
+  }
 
   function showSalesHandler() {
     setSalesShown(true);
@@ -76,3 +85,22 @@ export async function getStaticProps(context) {
     },
   };
 }
+
+// export async function getServerSideProps(context) {
+//   const session = await getServerSession(context.req, context.res, authOptions);
+
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//     };
+//   }
+
+//   return {
+//     props: {
+//       session,
+//     },
+//   };
+// }

@@ -4,9 +4,14 @@ import { useState } from "react";
 import CartList from "./CartList";
 import WishList from "./WishList";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { useSelector } from "react-redux";
+
 const Cart = (props) => {
   const [showCartList, setCartList] = useState(true);
   const [showWishList, setWishList] = useState(false);
+  const cartState = useSelector((state) => state.cart.cart);
+
+  const total = cartState.reduce((acc, curV) => acc + Number(curV.price), 0);
 
   function showCartListHandler() {
     setWishList(false);
@@ -45,7 +50,7 @@ const Cart = (props) => {
             className={`${styles.menuText} ${
               showWishList ? styles.menuTextActive : null
             }`}
-            onClick={showWishListHandler}
+            // onClick={showWishListHandler}
           >
             WishList
           </p>
@@ -58,7 +63,7 @@ const Cart = (props) => {
           <div className={styles.totalContainer}>
             <div className={styles.totalTextBox}>
               <p className={styles.totalText}>Cart Total:</p>
-              <p className={styles.total}>300$</p>
+              <p className={styles.total}>{total}$</p>
             </div>
             <div className={styles.buttonContainer}>
               <button className={styles.buyAllBtn}>Buy All</button>
