@@ -43,7 +43,9 @@ const SignIn = (props) => {
         <div
           className={styles.signInGoogle}
           onClick={() => {
-            signIn("google");
+            signIn("google", {
+              callbackUrl: "https://main--dazzling-nougat-d4e0fa.netlify.app",
+            });
           }}
         >
           <IoLogoGoogle className={styles.icon} />
