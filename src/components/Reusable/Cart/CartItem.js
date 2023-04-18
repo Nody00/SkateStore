@@ -34,6 +34,10 @@ const CartItem = (props) => {
           <p className={styles.priceLabel}>Price:</p>
           <p className={styles.price}>{props.price}$</p>
         </div>
+        <div className={styles.smallContainer}>
+          <p className={styles.priceLabel}>Quantity:</p>
+          <p className={styles.price}>{props.quantity}</p>
+        </div>
       </div>
 
       <div className={styles.buttonContainer}>

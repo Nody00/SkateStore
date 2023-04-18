@@ -1,5 +1,16 @@
 .infoSection {
   margin-bottom: 9rem;
+  transition: all 0.3s;
+}
+
+.prepare {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.inView {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .infoGrid {

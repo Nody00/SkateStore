@@ -115,3 +115,8 @@
   background-color: #fff;
   border: 1px solid #b1b9c5;
 }
+
+.demoText {
+  font-size: 1.6rem;
+  font-weight: 600;
+}

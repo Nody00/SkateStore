@@ -70,6 +70,9 @@ const SignIn = (props) => {
               placeholder="password"
             />
             <button>Sign in</button>
+            <p className={styles.demoText}>Demo admin account: </p>
+            <p className={styles.demoText}>Email: admin00@gmail.com</p>
+            <p className={styles.demoText}>Password: 12345678</p>
           </form>
         </div>
       </div>

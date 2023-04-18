@@ -11,7 +11,10 @@ const Cart = (props) => {
   const [showWishList, setWishList] = useState(false);
   const cartState = useSelector((state) => state.cart.cart);
 
-  const total = cartState.reduce((acc, curV) => acc + Number(curV.price), 0);
+  const total = cartState.reduce(
+    (acc, curV) => acc + Number(curV.price) * Number(curV.quantity),
+    0
+  );
 
   function showCartListHandler() {
     setWishList(false);
@@ -63,7 +66,7 @@ const Cart = (props) => {
           <div className={styles.totalContainer}>
             <div className={styles.totalTextBox}>
               <p className={styles.totalText}>Cart Total:</p>
-              <p className={styles.total}>{total}$</p>
+              <p className={styles.total}>{total.toFixed(2)}$</p>
             </div>
             <div className={styles.buttonContainer}>
               <button className={styles.buyAllBtn}>Buy All</button>

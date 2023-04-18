@@ -23,9 +23,9 @@ const Header = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const { data: session, status } = useSession();
-  console.log(session);
+  // console.log(session);
   const cartState = useSelector((state) => state.cart.cart);
-
+  const total = useSelector((state) => state.cart.total);
   // console.log(session, status);
   function showModal() {
     setCartOpen(false);
@@ -65,6 +65,12 @@ const Header = () => {
             <p className={styles.listText}>All products</p>
           </li>
         </Link>
+        {/* {session && (
+          <li className={styles.listItem}>
+            <IoAlbumsOutline className={styles.icon} />
+            <p className={styles.listText}>{session.user.email}</p>
+          </li>
+        )} */}
         {session && session.user.email === "admin00@gmail.com" && (
           <Link href="/admin" className={styles.nextLink}>
             <li className={styles.listItem}>
@@ -76,7 +82,7 @@ const Header = () => {
         <li className={styles.listItem} onClick={() => setCartOpen(true)}>
           <IoCartOutline className={styles.icon} />
           <p className={styles.listText}>Cart</p>
-          <div className={styles.cartNumber}>{cartState.length}</div>
+          <div className={styles.cartNumber}>{total}</div>
         </li>
         {!session && (
           <li className={styles.listItem} onClick={showModal}>

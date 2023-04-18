@@ -5,6 +5,17 @@
 }
 .cardSection {
   margin-bottom: 9rem;
+  transition: all 0.4s;
+}
+
+.prepare {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.inView {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .cardContainer1 {

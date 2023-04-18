@@ -29,6 +29,7 @@ const CartList = (props) => {
             back={item.back}
             name={item.name}
             price={item.price}
+            quantity={item.quantity}
           />
         ))}
       </div>

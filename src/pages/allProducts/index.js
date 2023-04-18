@@ -4,7 +4,27 @@ import { Fragment } from "react";
 import styles from "./index.module.css";
 import { connectToDB } from "@/lib/db";
 import ProductItem from "@/components/Reusable/Products/ProductItem";
+import { useState } from "react";
 const AllProducts = (props) => {
+  const [productState, setProductState] = useState(props.products);
+
+  function filterHandler(e) {
+    console.log(e.target.value);
+
+    if (e.target.value === "highest") {
+      let arr = [...productState];
+      let newArr = arr.sort((a, b) => Number(b.price) - Number(a.price));
+      setProductState([...newArr]);
+      return;
+    }
+    if (e.target.value === "lowest") {
+      let arr = [...productState];
+      let newArr = arr.sort((a, b) => Number(a.price) - Number(b.price));
+      setProductState([...newArr]);
+      return;
+    }
+  }
+
   return (
     <Fragment>
       <div className={styles.blackBg}>
@@ -13,20 +33,20 @@ const AllProducts = (props) => {
       <div className="container">
         <div className={styles.menu}>
           <label htmlFor="sortPrice">Sort by price:</label>
-          <select id="sortPrice">
+          <select id="sortPrice" onChange={filterHandler}>
             <option value="" key="1">
               Select one
             </option>
-            <option value="" key="2">
+            <option value="highest" key="2">
               Highest
             </option>
-            <option value="" key="3">
+            <option value="lowest" key="3">
               Lowest
             </option>
           </select>
         </div>
         <div className={styles.productsContainer}>
-          {props.products.map((product) => (
+          {productState.map((product) => (
             <ProductItem
               key={product.id}
               id={product.id}

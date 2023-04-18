@@ -1,9 +1,20 @@
 import styles from "./InfoSection.module.css";
-import Image from "next/image";
+
+import { useInView } from "react-intersection-observer";
 const InfoSection = () => {
+  const { ref, inView, entry } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
+  console.log(inView);
   return (
-    <div className={styles.infoSection}>
-      <div className="container">
+    <div ref={ref} className={styles.infoSection}>
+      <div
+        className={`container ${inView ? styles.inView : null} ${
+          styles.prepare
+        }`}
+      >
         <div className={styles.infoGrid}>
           {/* CARD 1 */}
           <div className={`${styles.imageContainer} ${styles.imageFirst}`}>

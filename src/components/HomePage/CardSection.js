@@ -1,8 +1,17 @@
 import styles from "./CardSection.module.css";
-
+import { useInView } from "react-intersection-observer";
 const CardSection = () => {
+  const { ref, inView, entry } = useInView({
+    triggerOnce: true,
+    threshold: 0,
+  });
   return (
-    <div className={styles.cardSection}>
+    <div
+      ref={ref}
+      className={`${styles.cardSection} ${inView ? styles.inView : null} ${
+        styles.prepare
+      }`}
+    >
       <div className="container">
         <div className={styles.cardGrid}>
           {/* CARD 1 */}
