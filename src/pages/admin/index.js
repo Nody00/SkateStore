@@ -7,7 +7,7 @@ import Sales from "@/components/AdminPage/Sales";
 import AddNew from "@/components/AdminPage/AddNew";
 import { useState } from "react";
 import { useRouter } from "next/router";
-
+import Head from "next/head";
 import { useSession } from "next-auth/react";
 const Admin = (props) => {
   const [salesShown, setSalesShown] = useState(true);
@@ -31,6 +31,15 @@ const Admin = (props) => {
   }
   return (
     <Fragment>
+      <Head>
+        <Head>
+          <title>Admin page</title>
+          <meta
+            name="description"
+            content="Configure settings,add products and view statistics"
+          />
+        </Head>
+      </Head>
       <div className={styles.blackBg}>
         <Header />
       </div>

@@ -5,6 +5,7 @@ import styles from "./index.module.css";
 import { connectToDB } from "@/lib/db";
 import ProductItem from "@/components/Reusable/Products/ProductItem";
 import { useState } from "react";
+import Head from "next/head";
 const AllProducts = (props) => {
   const [productState, setProductState] = useState(props.products);
 
@@ -27,6 +28,15 @@ const AllProducts = (props) => {
 
   return (
     <Fragment>
+      <Head>
+        <Head>
+          <title>Browse all products</title>
+          <meta
+            name="description"
+            content="Browse our selection of boards,trunks and wheels"
+          />
+        </Head>
+      </Head>
       <div className={styles.blackBg}>
         <Header />
       </div>
