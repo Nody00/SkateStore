@@ -48,7 +48,7 @@ const WishList = (props) => {
       }}
     >
       <div className={styles.wishListContainer}>
-        {wishList.map((item) => (
+        {wishList?.map((item) => (
           <CartItem
             key={item.id}
             id={item.id}
