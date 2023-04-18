@@ -92,7 +92,7 @@ const Header = () => {
         )}
         {session && (
           <li
-            className={styles.listItem}
+            className={styles.listItemSignout}
             onClick={() => {
               signOut();
             }}

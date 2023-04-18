@@ -2,6 +2,7 @@ import styles from "./CartItem.module.css";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { removeFromCart } from "@/features/cart/cartSlice";
+import WishList from "./WishList";
 
 const CartItem = (props) => {
   const [front, setFront] = useState(true);
@@ -34,18 +35,22 @@ const CartItem = (props) => {
           <p className={styles.priceLabel}>Price:</p>
           <p className={styles.price}>{props.price}$</p>
         </div>
-        <div className={styles.smallContainer}>
-          <p className={styles.priceLabel}>Quantity:</p>
-          <p className={styles.price}>{props.quantity}</p>
-        </div>
+        {!props.wishList && (
+          <div className={styles.smallContainer}>
+            <p className={styles.priceLabel}>Quantity:</p>
+            <p className={styles.price}>{props.quantity}</p>
+          </div>
+        )}
       </div>
 
-      <div className={styles.buttonContainer}>
-        <button className={styles.buyBtn}>Details</button>
-        <button className={styles.removeBtn} onClick={removeHandler}>
-          Remove
-        </button>
-      </div>
+      {!props.wishList && (
+        <div className={styles.buttonContainer}>
+          <button className={styles.buyBtn}>Details</button>
+          <button className={styles.removeBtn} onClick={removeHandler}>
+            Remove
+          </button>
+        </div>
+      )}
     </div>
   );
 };

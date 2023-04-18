@@ -5,6 +5,7 @@ export const cartSlice = createSlice({
   initialState: {
     cart: [],
     total: 0,
+    wishList: [],
   },
   reducers: {
     addToCart: (state, action) => {
@@ -55,9 +56,26 @@ export const cartSlice = createSlice({
 
       return;
     },
+    addToWishList(state, action) {
+      console.log(action);
+
+      const existingItem = state.wishList.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      // console.log(action.payload);
+      if (existingItem !== -1) {
+        // FOUND SAME ITEM
+        return;
+      }
+      state.wishList.push(action.payload);
+    },
+    replaceWishList(state, action) {
+      state.wishList = action.payload.wishlist;
+    },
   },
 });
 
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, addToWishList, replaceWishList } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;

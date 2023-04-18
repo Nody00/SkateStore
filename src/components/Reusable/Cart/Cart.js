@@ -53,7 +53,7 @@ const Cart = (props) => {
             className={`${styles.menuText} ${
               showWishList ? styles.menuTextActive : null
             }`}
-            // onClick={showWishListHandler}
+            onClick={showWishListHandler}
           >
             WishList
           </p>

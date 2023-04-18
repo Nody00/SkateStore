@@ -32,6 +32,23 @@
   cursor: pointer;
   border-radius: 1000px;
 }
+
+.listItemSignout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  transition: all 0.2s ease-out;
+  color: #fff;
+  padding: 1.2rem 2.4rem;
+  cursor: pointer;
+  border-radius: 1000px;
+}
+
+.listItemSignout:hover {
+  background-color: #c92a2a;
+}
+
 .listItem:hover {
   background-color: #b1b9c5;
 }
